@@ -89,9 +89,6 @@ func TestSymlink(t *testing.T) {
 
 	// Object viewed as symlink
 	file2 := fstest.NewItem("symlink.txt"+linkSuffix, "file.txt", modTime2)
-	if runtime.GOOS == "windows" {
-		file2.Size = 0 // symlinks are 0 length under Windows
-	}
 
 	// Object viewed as destination
 	file2d := fstest.NewItem("symlink.txt", "hello", modTime1)
